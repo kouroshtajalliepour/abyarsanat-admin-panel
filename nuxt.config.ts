@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         bucketDomainUrl: process.env.BUCKET_DOMAIN_URL,
       },
       domain: process.env.DOMAIN_ADDRESS,
-      websiteName: process.env.WEBSITE_NAME || "abyarsanat.com",
+      websiteName: process.env.WEBSITE_NAME || "abyarsanat.ir",
       senderInfo: {
         postalCode: "3361362360",
         phoneNumber: "09388583972",
