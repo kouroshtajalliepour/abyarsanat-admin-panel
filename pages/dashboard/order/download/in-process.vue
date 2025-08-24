@@ -17,7 +17,7 @@ const {
 
 const { t, locale } = useI18n();
 useHead({
-  title: `Abyar Sanaat - Invoices ${jmoment(Date.now())
+  title: `Mavida Home - Invoices ${jmoment(Date.now())
     .locale("fa")
     .format("YYYY-MM-DD")}`,
 });
@@ -37,14 +37,14 @@ const {
 // const mockData = ref({
 //   id: 1,
 //   phone_number: "09101777753",
-//   postal_code: "1234876822",
+//   postal_code: "1134876822",
 //   first_name: "کورش",
 //   last_name: "تجلی پور",
 //   full_address: "تهران صادقیه، بلوار فلان، اونیکی کوچه فلان پلاک زنگ ۲۰",
 // });
 
 const a4Pages = computed(() => {
-  const chunkSize = 13;
+  const chunkSize = 11;
 
   const chunks = [];
 
@@ -150,6 +150,14 @@ onMounted(async () => {
         <div class="order-title-wrapper">
           <h3 class="order-title">{{ t("entities.fields.invoice_title") }}</h3>
         </div>
+        <div class="order-extra-info">
+          <p class="inline-info heading-text">
+            <strong> {{ t("entities.fields.represented") }}: </strong>
+            <span> {{ page.recipient_first_name }} {{ page.recipient_last_name }} </span>
+            <strong> {{ t("entities.fields.phone_number") }}: </strong>
+            <span class="ltr">{{ page.recipient_phone_number }}</span>
+          </p>
+        </div>
         <div class="order-product-table-wrapper">
           <client-only>
             <table class="order-product-table">
@@ -166,10 +174,12 @@ onMounted(async () => {
                   {{ t("entities.fields.total_amount") }}
                 </th>
               </tr>
-              <tr class="table-row-wrapper" v-for="i in 13">
+              <tr class="table-row-wrapper" v-for="i in 11">
                 <td class="table-row row">
                   <div class="td-wrapper">
-                    <span v-if="page.cart_items[i - 1]?.name">{{ i }}</span>
+                    <span v-if="page.cart_items[i - 1]?.name">{{
+                      (page.pageNumber || 1 - 1) * 11 + i
+                    }}</span>
                     <!-- <img
                       v-if="page.cart_items[i - 1]?.name"
                       :src="
@@ -317,6 +327,15 @@ onMounted(async () => {
       justify-content: space-between;
       width: 200px;
       margin-bottom: 10px;
+      &.heading-text {
+        width: unset;
+        span {
+          margin: 0 8px;
+          &.ltr {
+            direction: ltr;
+          }
+        }
+      }
     }
     .order-header {
       height: 100px;
