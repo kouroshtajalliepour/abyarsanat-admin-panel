@@ -1,0 +1,72 @@
+.carousel-wrapper {
+    &.image-slider{
+        .carousel__item {
+            height: 200px;
+            width: 100%;
+            background-color: rgba(61, 58, 58, 0.15);
+            color: rgba(61, 58, 58, 0.15) dotted;
+            font-size: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            &.add__item{
+                border: 1px rgba(61, 58, 58, 0.15) dotted;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            .controls-wrapper{
+                display: none;
+            }
+            &:hover{
+                .controls-wrapper{
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-start;
+                    button{
+                        padding: 5px;
+                        margin: 3px;
+                        display: flex;
+                        justify-content: center;
+                        background-color: white;
+                        align-items: center;
+                        background-color: transparent;
+                        box-sizing: content-box;
+                        cursor: pointer;
+                        width: 48px;
+                        width: 48px;
+                    }
+                }
+            }
+            span{
+                font-size: 1.5em;
+            }
+            p{
+                margin: 2.5px;
+                font-size: .8em;
+            }
+            // img{
+            //     height: 64px;
+            //     max-width: 100%;
+            // }
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+          
+        .carousel__slide {
+            padding: 10px;
+        }
+        
+        .carousel__prev,
+        .carousel__next {
+            box-sizing: content-box;
+            background-color:rgba(61, 58, 58, 0.15) ;
+        }
+    }
+}

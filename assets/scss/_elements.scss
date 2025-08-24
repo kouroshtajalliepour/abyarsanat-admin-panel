@@ -1,0 +1,153 @@
+// html
+html {
+  scroll-behavior: smooth;
+}
+
+// Headings
+// -----------------------------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 40px;
+  @include mq(lg) {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  @include mq(lg) {
+    font-size: 36px;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  @include mq(lg) {
+    font-size: 26px;
+  }
+}
+
+h4 {
+  font-size: 18px;
+  @include mq(lg) {
+    font-size: 22px;
+  }
+}
+
+h5 {
+  font-size: 18px;
+  @include mq(lg) {
+    font-size: 20px;
+  }
+}
+
+h6 {
+  font-size: 16px;
+  @include mq(lg) {
+    font-size: 18px;
+  }
+}
+
+// Text
+// -----------------------------------------------------------------------------
+p {
+  font-size: 16px;
+  color: $body-color;
+  font-weight: 400;
+  @include mq(lg) {
+    font-size: 18px;
+  }
+}
+
+// Links
+// -----------------------------------------------------------------------------
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+
+  //  &.btn-secondary {
+  //    color: $primary !important;
+  //  }
+
+  //  &.btn-primary {
+  //    color: $white !important;
+  //  }
+}
+
+// Lists
+// -----------------------------------------------------------------------------
+ol,
+ul,
+dl {
+}
+
+// Image
+// -----------------------------------------------------------------------------
+img {
+  width: 100%;
+}
+
+figure {
+}
+
+figcaption {
+}
+
+// Other
+// -----------------------------------------------------------------------------
+picture {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+span {
+  color: $body-color;
+}
+
+blockquote {
+}
+
+strong {
+}
+
+small {
+}
+
+input[type='radio'] {
+  position: relative;
+  appearance: none;
+
+  &:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: 3px;
+    left: 0px;
+    position: relative;
+    background-color: $white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid $secondary;
+    box-shadow: inset 0 0 0 2px $white;
+  }
+  &:checked {
+    &:after {
+      background-color: $secondary;
+      border: 1px solid $secondary;
+    }
+  }
+}

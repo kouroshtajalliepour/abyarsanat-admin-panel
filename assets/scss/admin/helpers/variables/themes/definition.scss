@@ -1,0 +1,45 @@
+// primary colors
+$theme-primary               : --theme-primary;
+$theme-on-primary            : --theme-on-primary;
+$theme-out-primary           : --theme-out-primary;
+// secondary colors
+$theme-secondary             : --theme-secondary;
+$theme-on-secondary          : --theme-on-secondary;
+$theme-out-secondary         : --theme-out-secondary;
+// optional colors
+$theme-optional              : --theme-optional;
+$theme-on-optional           : --theme-on-optional;
+$theme-out-optional          : --theme-out-optional;
+// background-colors
+$theme-background            : --theme-background;
+$theme-on-background         : --theme-on-background;
+$theme-on-background-lighter : --theme-on-background-lighter;
+$theme-out-background        : --theme-out-background;
+// surface-colors
+$theme-surface               : --theme-surface;
+$theme-on-surface            : --theme-on-surface;
+$theme-on-surface-lighter    : --theme-on-surface-lighter;
+$theme-out-surface           : --theme-out-surface;
+
+
+@mixin spread-map($map: ()) {
+
+  @each $key,
+  $value in $map {
+    #{$key}: $value;
+  }
+}
+
+@function theme($key, $fallback: null, $map: $theme-map-light) {
+  @if not map-has-key($map, $key) {
+    @error "key: '#{$key}', is not a key in map: #{$map}";
+  }
+
+  @if ($fallback) {
+    @return var($key, $fallback);
+  }
+
+  @else {
+    @return var($key);
+  }
+}

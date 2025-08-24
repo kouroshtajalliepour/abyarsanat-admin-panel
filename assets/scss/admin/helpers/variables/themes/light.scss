@@ -1,0 +1,20 @@
+@import "./definition.scss";
+@import "../color-ranges.scss";
+
+$light-theme: ($theme-primary: $golden-orange,
+  $theme-on-primary: $white,
+  $theme-out-primary: $white-15,
+  $theme-secondary: $traditional-gold-color,
+  $theme-on-secondary: $white,
+  $theme-out-secondary: $white-15,
+  $theme-optional: $shiny-gold,
+  $theme-on-optional: $coral-black,
+  $theme-out-optional: $coral-black-15,
+  $theme-background: $coconut-milk,
+  $theme-on-background: $coral-black,
+  $theme-on-background-lighter: $coral-black-50,
+  $theme-out-background: $coral-black-15,
+  $theme-surface: $white,
+  $theme-on-surface: $coral-black,
+  $theme-on-surface-lighter: $light-coral-black,
+  $theme-out-surface: $coral-black-15);
