@@ -19,7 +19,7 @@ export default {
         useCases: enUseCases,
     },
     fa: {
-        projectName: "ماویدا هوم",
+        projectName: "آبیار صنعت",
         ...basicFa,
         links: faLinks,
         pages: faPages,

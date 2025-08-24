@@ -199,7 +199,7 @@ export default defineNuxtConfig({
     defaultLocale: 'fa',
     compilation: { jit: true, strictMessage: true, escapeHtml: false },
     locales: [
-      { code: "fa", iso: "fa", dir: 'rtl', displayName: "فارسی", title:"ماویدا هوم" },
+      { code: "fa", iso: "fa", dir: 'rtl', displayName: "فارسی", title:"آبیار صنعت" },
       // { code: "en", iso: "en-US", dir: 'ltr', displayName: "english", title:"Abyar Sanaat" },
     ],
     detectBrowserLanguage: {
